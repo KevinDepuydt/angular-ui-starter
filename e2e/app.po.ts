@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class MeanStarterPage {
+export class AngularUIStarterPage {
   navigateTo() {
     return browser.get('/');
   }

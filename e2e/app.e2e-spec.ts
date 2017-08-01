@@ -1,10 +1,10 @@
-import { MeanStarterPage } from './app.po';
+import { AngularUIStarterPage } from './app.po';
 
 describe('angular-ui-starter App', () => {
-  let page: MeanStarterPage;
+  let page: AngularUIStarterPage;
 
   beforeEach(() => {
-    page = new MeanStarterPage();
+    page = new AngularUIStarterPage();
   });
 
   it('should display welcome message', () => {
