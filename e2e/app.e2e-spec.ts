@@ -1,6 +1,6 @@
 import { MeanStarterPage } from './app.po';
 
-describe('mean-starter App', () => {
+describe('angular-ui-starter App', () => {
   let page: MeanStarterPage;
 
   beforeEach(() => {
