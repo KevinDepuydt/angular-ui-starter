@@ -1,0 +1,58 @@
+<div class="container">
+  <h1 class="title">Register</h1>
+  <hr />
+  <div class="notification is-primary" *ngIf="success.length > 0"><button class="delete" (click)="clean()"></button> {{success}}</div>
+  <div class="notification is-danger" *ngIf="error.length > 0"><button class="delete" (click)="clean()"></button> {{error}}</div>
+  <div class="columns is-centered">
+    <div class="column is-half is-narrow">
+      <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+        <div class="field" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label class="label" for="firstName">First name</label>
+          <div class="control">
+            <input class="input" id="firstName" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required>
+          </div>
+          <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
+        </div>
+        <div class="field" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label class="label" for="lastName">Last name</label>
+          <div class="control">
+            <input class="input" id="lastName" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required>
+          </div>
+          <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+        </div>
+        <div class="field" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label class="label" for="username">Username</label>
+          <div class="control">
+            <input class="input" id="username" name="username" [(ngModel)]="model.username" #username="ngModel" required>
+          </div>
+          <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+        </div>
+        <div class="field" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+          <label class="label" for="password">Password</label>
+          <div class="control">
+            <input class="input" type="password" id="password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+          </div>
+          <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+        </div>
+        <div class="has-text-centered" *ngIf="loading">
+            <span class="icon is-large">
+              <i class="fa fa-cog fa-spin fa-3x fa-fw" aria-hidden="true"></i>
+            </span>
+        </div>
+        <div class="field is-grouped is-grouped-right">
+          <div class="control">
+            <button [disabled]="loading" class="button is-primary">Register</button>
+          </div>
+          <div class="control">
+            <button [disabled]="loading" type="reset" class="button is-danger">Reset</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="has-text-centered">
+    <p>
+      Already registered? <a routerLink="/login" class="link">Login</a> now!
+    </p>
+  </div>
+</div>
