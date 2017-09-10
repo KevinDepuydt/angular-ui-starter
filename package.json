@@ -1,6 +1,6 @@
 {
-  "name": "angular-ui-starter",
-  "version": "0.0.0",
+  "name": "wouvy-website",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
