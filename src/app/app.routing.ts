@@ -10,4 +10,6 @@ const appRoutes: Routes = [
   { path: '**', component: NotFoundComponent },
 ];
 
-export default RouterModule.forRoot(appRoutes);
+const routing = RouterModule.forRoot(appRoutes);
+
+export { routing };
